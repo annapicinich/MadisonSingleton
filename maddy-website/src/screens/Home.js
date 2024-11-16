@@ -44,11 +44,41 @@ function Home() {
   
   };
   const homeStyle = {
-    width: '120px',
+    width: '140px',
     height: '80px',
     position: 'absolute',
-    top: '51%',
+    top: '53%',
     left: '24%',
+    transform: 'translate(-50%, -50%)',
+    cursor: 'pointer',
+
+  };
+  const meStyle = {
+    width: '130px',
+    height: '80px',
+    position: 'absolute',
+    top: '50%',
+    left: '75%',
+    transform: 'translate(-50%, -50%)',
+    cursor: 'pointer',
+
+  };
+  const photosStyle = {
+    width: '130px',
+    height: '80px',
+    position: 'absolute',
+    top: '49%',
+    left: '58%',
+    transform: 'translate(-50%, -50%)',
+    cursor: 'pointer',
+
+  };
+  const apStyle = {
+    width: '130px',
+    height: '80px',
+    position: 'absolute',
+    top: '50%',
+    left: '41%',
     transform: 'translate(-50%, -50%)',
     cursor: 'pointer',
 
@@ -70,11 +100,35 @@ function Home() {
           
        
       </div>
-      <Link to="/me">
+      <Link to="/">
         <img
           src={require(`../image/home.jpg`)}
-          alt="Home"
+   
           style={homeStyle}
+         
+        />
+      </Link>
+      <Link to="/me">
+        <img
+          src={require(`../image/me.jpg`)}
+ 
+          style={meStyle}
+         
+        />
+      </Link>
+      <Link to="/photos">
+        <img
+          src={require(`../image/photos.jpg`)}
+        
+          style={photosStyle}
+         
+        />
+      </Link>
+      <Link to="/ap">
+        <img
+          src={require(`../image/ap.jpg`)}
+        
+          style={apStyle}
          
         />
       </Link>
