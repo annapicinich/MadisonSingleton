@@ -1,19 +1,20 @@
 // src/Home.js
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Home() {
   const images = Array.from({ length: 64 }, (_, i) => i + 1);
 
   const containerStyle = {
     textAlign: 'center',
-    height: '99vh',
+    height: '100vh',
     overflow: 'hidden',
-    marginTop: '-51px',
+    // marginTop: '-51px',
   };
 
   const gridStyle = {
     display: 'grid',
-    gridTemplateColumns: 'repeat(auto-fill, minmax(45px, 1fr))',
+    gridTemplateColumns: 'repeat(auto-fill, minmax(45px, .5fr))',
     gridAutoRows: '50vh', // Each row of images will be 50% of the viewport height
     // marginTop: '-40px',
     // height: '100vh',
@@ -25,27 +26,58 @@ function Home() {
     height: '100%',  // Full height of each grid cell (50vh)
     objectFit: 'cover',
   };
+
   const wordStyle = {
-    // width: '45px',
-    // height: '320px',
-    fontSize: '150px',
-    
-    // top: '-50px',
     position: 'absolute',
-    top: '50%',
-    left: '50%',
+    top: '45%',
+    left: '53%',
     transform: 'translate(-50%, -50%)',
-    color: 'white',
-   
-    fontWeight: 'bold',
     
   };
+  const nameStyle = {
+    width: '1600px', // Adjust as needed for a smaller container
+    height: '300px', // Adjust as needed
+    overflow: 'hidden',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  
+  };
+  const homeStyle = {
+    width: '120px',
+    height: '80px',
+    position: 'absolute',
+    top: '51%',
+    left: '24%',
+    transform: 'translate(-50%, -50%)',
+    cursor: 'pointer',
+
+  };
+  
+
 
   return (
     <div style={containerStyle}>
         <div style={wordStyle}>
-            MADISON
-            </div>
+      
+          <img
+           
+            src={require(`../image/name.jpg`)}
+            alt={`Name`}
+            style={nameStyle}
+            
+          />
+          
+       
+      </div>
+      <Link to="/me">
+        <img
+          src={require(`../image/home.jpg`)}
+          alt="Home"
+          style={homeStyle}
+         
+        />
+      </Link>
       <div style={gridStyle}>
         {images.map((num) => (
           <img
@@ -53,14 +85,7 @@ function Home() {
             src={require(`../image/${num}.jpg`)}
             alt={`Image ${num}`}
             style={photoStyle}
-            // onMouseEnter={(e) => {
-            //   e.currentTarget.style.filter = 'brightness(0.7)';
-            //   e.currentTarget.style.opacity = '0.9';
-            // }}
-            // onMouseLeave={(e) => {
-            //   e.currentTarget.style.filter = 'brightness(1)';
-            //   e.currentTarget.style.opacity = '1';
-            // }}
+            
           />
         ))}
       </div>

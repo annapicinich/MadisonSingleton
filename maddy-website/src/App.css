@@ -36,7 +36,12 @@
     transform: rotate(360deg);
   }
 }
-
+/* In your App.css or global CSS */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
 /* App.css */
 nav {
   display: flex;
